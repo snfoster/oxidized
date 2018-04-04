@@ -1,0 +1,15 @@
+### How to start this container:
+
+docker run -e CONFIG_RELOAD_INTERVAL=600 \
+ -v /srv/docker/oxidized/.config/:/root/.config/oxidized \
+ -p 8888:8888/tcp -t oxidized/oxidized:latest oxidized
+
+
+#######
+
+
+docker run -e CONFIG_RELOAD_INTERVAL=600 \
+ -v /srv/docker/.config/:/root/.config \
+ -p 8888:8888/tcp -t oxidized/oxidized:latest oxidized
+
+

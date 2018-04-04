@@ -1,0 +1,1400 @@
+
+DC-3750G_48#enable
+DC-3750G_48#12sf532!@12sf532!@
+% Unknown command or computer name, or unable to find computer address
+DC-3750G_48#terminal length 0
+DC-3750G_48#terminal width 0
+DC-3750G_48#show version
+Cisco IOS Software, C3750 Software (C3750-IPBASEK9-M), Version 12.2(53)SE2, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 21-Apr-10 04:49 by prod_rel_team
+Image text-base: 0x01000000, data-base: 0x02C00000
+
+ROM: Bootstrap program is C3750 boot loader
+BOOTLDR: C3750 Boot Loader (C3750-HBOOT-M) Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+
+DC-3750G_48 uptime is 1 year, 10 weeks, 5 days, 19 hours, 6 minutes
+System returned to ROM by power-on
+System restarted at 16:47:57 dst Tue Jan 17 2017
+System image file is "flash:c3750-ipbasek9-mz.122-53.SE2/c3750-ipbasek9-mz.122-53.SE2.bin"
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+cisco WS-C3750G-48TS (PowerPC405) processor (revision C0) with 131072K bytes of memory.
+Processor board ID FOC0923U0Q9
+Last reset from power-on
+44 Virtual Ethernet interfaces
+48 FastEthernet interfaces
+108 Gigabit Ethernet interfaces
+The password-recovery mechanism is enabled.
+
+512K bytes of flash-simulated non-volatile configuration memory.
+Base ethernet MAC Address       : 00:14:6A:59:06:00
+Motherboard assembly number     : 73-9366-08
+Power supply part number        : 341-0107-01
+Motherboard serial number       : FOC09223D6P
+Power supply serial number      : AZS0921062U
+Model revision number           : C0
+Motherboard revision number     : A0
+Model number                    : WS-C3750G-48TS-S
+System serial number            : FOC0923U0Q9
+SFP Module assembly part number : 73-7757-03
+SFP Module revision Number      : A0
+SFP Module serial number        : CAT09210LHN
+Top Assembly Part Number        : 800-25409-02
+Top Assembly Revision Number    : A0
+Version ID                      : 02
+CLEI Code Number                : CNMWU00ARB
+Hardware Board Revision Number  : 0x05
+
+
+Switch Ports Model              SW Version            SW Image                 
+------ ----- -----              ----------            ----------               
+     3 52    WS-C3750G-48TS     12.2(53)SE2           C3750-IPBASEK9-M         
+*    4 52    WS-C3750G-48TS     12.2(53)SE2           C3750-IPBASEK9-M         
+
+
+Switch 03
+---------
+Switch Uptime                   : 1 year, 10 weeks, 5 days, 19 hours, 3 minutes 
+Base ethernet MAC Address       : 00:14:6A:59:00:00
+Motherboard assembly number     : 73-9366-08
+Power supply part number        : 341-0107-01
+Motherboard serial number       : FOC09222X18
+Power supply serial number      : AZS09210622
+Model revision number           : C0
+Motherboard revision number     : A0
+Model number                    : WS-C3750G-48TS-S
+System serial number            : FOC0923U0QN
+SFP Module assembly part number : 73-7757-03
+SFP Module revision number      : A0
+SFP Module serial number        : CAT09210LH6
+Top assembly part number        : 800-25409-02
+Top assembly revision number    : A0
+Version ID                      : 02
+CLEI Code Number                : CNMWU00ARB
+
+Configuration register is 0xF
+
+DC-3750G_48#show vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 1
+VTP Domain Name                 : mapolce
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0014.6a59.0600
+Configuration last modified by 172.29.128.254 at 6-22-17 17:12:31
+Local updater ID is 172.29.128.1 on interface Vl2 (lowest numbered VLAN interface found)
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 1005
+Number of existing VLANs          : 54
+Configuration Revision            : 158
+MD5 digest                        : 0x23 0xBD 0x23 0x3A 0x05 0x0D 0x6E 0x96 
+                                    0x32 0x3F 0x4E 0x47 0xAB 0xA3 0x0B 0x9D 
+DC-3750G_48#show inventory
+NAME: "4", DESCR: "WS-C3750G-48TS"
+PID: WS-C3750G-48TS-S  , VID: 02   , SN: FOC0923U0Q9
+
+NAME: "3", DESCR: "WS-C3750G-48TS"
+PID: WS-C3750G-48TS-S  , VID: 02   , SN: FOC0923U0QN
+
+
+DC-3750G_48#show running-config
+Building configuration...
+
+Current configuration : 30354 bytes
+!
+! Last configuration change at 11:41:55 est Mon Apr 2 2018 by sfoster
+! NVRAM config last updated at 11:42:01 est Mon Apr 2 2018 by sfoster
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+!
+hostname DC-3750G_48
+!
+boot-start-marker
+boot-end-marker
+!
+logging count
+logging buffered notifications
+logging console notifications
+logging monitor notifications
+enable secret 5 $1$zPaR$KlK0Ne2Zwa3z446SHoUbP0
+!
+username mapci.local privilege 15 secret 5 $1$6VKO$yyMsZkxE.taF1KrErR6N50
+username mapolce privilege 15 secret 5 $1$1MXV$4TS4iC8wRRC4CGPBiLyZG0
+!
+!
+aaa new-model
+!
+!
+aaa authentication login default group radius local
+aaa authentication login localauth local
+aaa authentication enable default group radius enable
+aaa authorization exec default group radius local if-authenticated 
+!
+!
+!
+aaa session-id common
+clock timezone dst -5
+clock summer-time est recurring 1 Sun Apr 0:01 last Sun Oct 0:01
+switch 1 provision ws-c3750-24ts
+switch 2 provision ws-c3750-24ts
+switch 3 provision ws-c3750g-48ts
+switch 4 provision ws-c3750g-48ts
+system mtu routing 1500
+authentication mac-move permit
+ip subnet-zero
+ip routing
+no ip domain-lookup
+ip domain-name phoen1xasp.com
+!
+!
+!
+mls qos map cos-dscp 0 8 16 26 32 46 48 56
+mls qos srr-queue input bandwidth 90 10
+mls qos srr-queue input threshold 1 8 16
+mls qos srr-queue input threshold 2 34 66
+mls qos srr-queue input buffers 67 33 
+mls qos srr-queue input cos-map queue 1 threshold 2 1
+mls qos srr-queue input cos-map queue 1 threshold 3 0
+mls qos srr-queue input cos-map queue 2 threshold 1 2
+mls qos srr-queue input cos-map queue 2 threshold 2 4 6 7
+mls qos srr-queue input cos-map queue 2 threshold 3 3 5
+mls qos srr-queue input dscp-map queue 1 threshold 2 9 10 11 12 13 14 15
+mls qos srr-queue input dscp-map queue 1 threshold 3 0 1 2 3 4 5 6 7
+mls qos srr-queue input dscp-map queue 1 threshold 3 32
+mls qos srr-queue input dscp-map queue 2 threshold 1 16 17 18 19 20 21 22 23
+mls qos srr-queue input dscp-map queue 2 threshold 2 33 34 35 36 37 38 39 48
+mls qos srr-queue input dscp-map queue 2 threshold 2 49 50 51 52 53 54 55 56
+mls qos srr-queue input dscp-map queue 2 threshold 2 57 58 59 60 61 62 63
+mls qos srr-queue input dscp-map queue 2 threshold 3 24 25 26 27 28 29 30 31
+mls qos srr-queue input dscp-map queue 2 threshold 3 40 41 42 43 44 45 46 47
+mls qos srr-queue output cos-map queue 1 threshold 3 5
+mls qos srr-queue output cos-map queue 2 threshold 3 3 6 7
+mls qos srr-queue output cos-map queue 3 threshold 3 2 4
+mls qos srr-queue output cos-map queue 4 threshold 2 1
+mls qos srr-queue output cos-map queue 4 threshold 3 0
+mls qos srr-queue output dscp-map queue 1 threshold 3 40 41 42 43 44 45 46 47
+mls qos srr-queue output dscp-map queue 2 threshold 3 24 25 26 27 28 29 30 31
+mls qos srr-queue output dscp-map queue 2 threshold 3 48 49 50 51 52 53 54 55
+mls qos srr-queue output dscp-map queue 2 threshold 3 56 57 58 59 60 61 62 63
+mls qos srr-queue output dscp-map queue 3 threshold 3 16 17 18 19 20 21 22 23
+mls qos srr-queue output dscp-map queue 3 threshold 3 32 33 34 35 36 37 38 39
+mls qos srr-queue output dscp-map queue 4 threshold 1 8
+mls qos srr-queue output dscp-map queue 4 threshold 2 9 10 11 12 13 14 15
+mls qos srr-queue output dscp-map queue 4 threshold 3 0 1 2 3 4 5 6 7
+mls qos queue-set output 1 threshold 1 138 138 92 138
+mls qos queue-set output 1 threshold 2 138 138 92 400
+mls qos queue-set output 1 threshold 3 36 77 100 318
+mls qos queue-set output 1 threshold 4 20 50 67 400
+mls qos queue-set output 2 threshold 1 149 149 100 149
+mls qos queue-set output 2 threshold 2 118 118 100 235
+mls qos queue-set output 2 threshold 3 41 68 100 272
+mls qos queue-set output 2 threshold 4 42 72 100 242
+mls qos queue-set output 1 buffers 10 10 26 54
+mls qos queue-set output 2 buffers 16 6 17 61
+mls qos
+!
+crypto pki trustpoint TP-self-signed-1784217600
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1784217600
+ revocation-check none
+ rsakeypair TP-self-signed-1784217600
+!
+!
+!
+!
+!
+archive
+ path tftp://172.29.129.128/DC-3750G_48
+ write-memory
+ time-period 1440
+spanning-tree mode pvst
+no spanning-tree optimize bpdu transmission
+spanning-tree etherchannel guard misconfig
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+ip ssh version 2
+!
+!
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel3
+ description ***** Uplink to DC-3750X_24 *****
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet1/0/1
+!
+interface FastEthernet1/0/2
+ description TWC internet Router
+ switchport access vlan 12
+ speed 100
+ duplex full
+!
+interface FastEthernet1/0/3
+ description Telcove 1841 WAN - 64.8.69.1 (Spanning Tree)
+ switchport access vlan 11
+ spanning-tree port-priority 32
+!
+interface FastEthernet1/0/4
+ description MA Polce Office ASA Outside 64.8.69.50
+ switchport access vlan 21
+ speed 100
+ duplex full
+ spanning-tree portfast
+!
+interface FastEthernet1/0/5
+ switchport access vlan 11
+ spanning-tree portfast
+!
+interface FastEthernet1/0/6
+!
+interface FastEthernet1/0/7
+ description *TEMP* Telcove 1841 WAN - 64.8.69.1 (Spanning Tree)
+ switchport access vlan 11
+ spanning-tree portfast
+ spanning-tree port-priority 16
+!
+interface FastEthernet1/0/8
+!
+interface FastEthernet1/0/9
+ description FatPipe Secondary WAN 3 - TWC - 208.125.235.2
+ switchport access vlan 12
+ speed 100
+ duplex full
+!
+interface FastEthernet1/0/10
+ description JETNET Barracuda
+ switchport access vlan 605
+ speed 100
+ duplex full
+ spanning-tree portfast
+!
+interface FastEthernet1/0/11
+ description Liebert Unit 2
+ switchport access vlan 254
+ switchport mode access
+!
+interface FastEthernet1/0/12
+!
+interface FastEthernet1/0/13
+!
+interface FastEthernet1/0/14
+ description FatPipe Secondary LAN - 64.8.69.4
+ switchport access vlan 21
+ speed 100
+ duplex full
+!
+interface FastEthernet1/0/15
+ description *TEMP* PIX Primary Outside - 64.8.69.5
+ switchport access vlan 3
+ speed 100
+ duplex full
+ spanning-tree portfast
+!
+interface FastEthernet1/0/16
+ description BCE Link to Warren St
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ speed 100
+ duplex full
+!
+interface FastEthernet1/0/17
+ description Exinda Inside
+ switchport access vlan 3
+ spanning-tree portfast
+!
+interface FastEthernet1/0/18
+!
+interface FastEthernet1/0/19
+!
+interface FastEthernet1/0/20
+ description ASPCAG1
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface FastEthernet1/0/21
+ description Utica First Sonicwall - 64.8.69.138
+ switchport access vlan 11
+!
+interface FastEthernet1/0/22
+ description UCP_ASA Outside
+ switchport access vlan 110
+!
+interface FastEthernet1/0/23
+!
+interface FastEthernet1/0/24
+ description Uplink to 3550-1
+ switchport access vlan 2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ speed 100
+ duplex full
+ srr-queue bandwidth share 10 10 60 20
+ srr-queue bandwidth shape 10 0 0 0
+ mls qos trust cos
+ auto qos voip trust 
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/1
+!
+interface GigabitEthernet1/0/2
+!
+interface FastEthernet2/0/1
+ description Primary Phoen1x ASA Outside
+ switchport access vlan 21
+ speed 100
+ duplex full
+ spanning-tree portfast
+!
+interface FastEthernet2/0/2
+ description Link to Office ASA 5505
+ switchport access vlan 519
+ switchport mode access
+ speed 100
+ duplex full
+ spanning-tree portfast
+!
+interface FastEthernet2/0/3
+ description Link to CC gateway
+ switchport access vlan 804
+ spanning-tree portfast
+!
+interface FastEthernet2/0/4
+ description Primary ASA Failover_State
+ switchport access vlan 30
+ spanning-tree portfast
+!
+interface FastEthernet2/0/5
+ description Exinda Inside
+ switchport access vlan 3
+ spanning-tree portfast
+!
+interface FastEthernet2/0/6
+!
+interface FastEthernet2/0/7
+ description Failover ASA Outside
+ switchport access vlan 21
+ speed 100
+ duplex full
+!
+interface FastEthernet2/0/8
+ description Failover ASA Failover_State
+ switchport access vlan 30
+ spanning-tree portfast
+!
+interface FastEthernet2/0/9
+!
+interface FastEthernet2/0/10
+ description RG&E Support PC
+ switchport access vlan 615
+!
+interface FastEthernet2/0/11
+ description ASA RG&E
+ switchport access vlan 615
+!
+interface FastEthernet2/0/12
+ description ASA RG&E
+ switchport access vlan 615
+!
+interface FastEthernet2/0/13
+!
+interface FastEthernet2/0/14
+!
+interface FastEthernet2/0/15
+!
+interface FastEthernet2/0/16
+ description Phoen1x ASA IPS
+ switchport access vlan 3
+ speed 100
+ duplex full
+ spanning-tree portfast
+!
+interface FastEthernet2/0/17
+!
+interface FastEthernet2/0/18
+!
+interface FastEthernet2/0/19
+!
+interface FastEthernet2/0/20
+!
+interface FastEthernet2/0/21
+!
+interface FastEthernet2/0/22
+ description Rome SBC/CUBE ISR4321
+!
+interface FastEthernet2/0/23
+ description voice gateway 2651
+ switchport access vlan 501
+ speed 100
+ duplex full
+ srr-queue bandwidth share 10 10 60 20
+ srr-queue bandwidth shape 10 0 0 0
+ mls qos trust cos
+ auto qos voip trust 
+ spanning-tree portfast
+!
+interface FastEthernet2/0/24
+!
+interface GigabitEthernet2/0/1
+!
+interface GigabitEthernet2/0/2
+!
+interface GigabitEthernet3/0/1
+ description Cisco 3825 172.30.5.131
+ switchport access vlan 612
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/2
+ no switchport
+ no ip address
+ shutdown
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/3
+ description ASPESX1 Management
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/4
+ description JetNet Web Server
+ switchport access vlan 605
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/5
+ description Cisco 3825 172.30.5.132
+ switchport access vlan 612
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/6
+ description Uplink to Rack6-3750-1-1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface GigabitEthernet3/0/7
+ description Zimbra Server
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/8
+ description ASPXEN8 SAN
+ switchport access vlan 10
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/9
+ description ASPXEN5 VM2
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/10
+ description ASPXEN8 SAN2
+ switchport access vlan 20
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/11
+ description ASPESX2 Management
+ switchport access vlan 2
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/12
+ description ASPESX1 SAN
+ switchport access vlan 10
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/13
+ description ASPESX2 SAN
+ switchport access vlan 10
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/14
+ description MVINTECH3
+ switchport access vlan 4
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/15
+ description **** Uplink to DC-3750X_24
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet3/0/16
+ description ASPXEN5 LAN
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/17
+ description AVAILABLE
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/18
+ description ASPXEN5 SAN2
+ switchport access vlan 20
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/19
+ description XENSERVER3 SAN1
+ switchport access vlan 10
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/20
+ description ASPXEN8 LAN
+ switchport access vlan 2
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/21
+ description ASPESX1 VM1
+ switchport access vlan 254
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/22
+ description ASPESX1 SAN2
+ switchport access vlan 20
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/23
+ description ASPESX1 VM2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/24
+ description NYSTECWEB2
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/25
+ description AVAILABLE
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/26
+ description JetNet Web Server 2nd failover port
+ switchport access vlan 605
+ switchport mode access
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/27
+ description UCS FI Management 1
+ switchport access vlan 254
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/28
+ description JETSQL2 NIC2
+ switchport access vlan 605
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/29
+ description ASPXEN5 SAN
+ switchport access vlan 10
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/30
+ description JETBET Barracuda
+ switchport access vlan 605
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/31
+ description *** MAPCI Secondary 5510 FW Internet port 0 ***
+ switchport access vlan 110
+ switchport mode access
+ speed 100
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/32
+ description JETNET MPLS
+ switchport access vlan 605
+!
+interface GigabitEthernet3/0/33
+ description MVI5510 Outside
+ switchport access vlan 110
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/34
+ description ASPSAN9 SAN
+ switchport access vlan 10
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/35
+ description ASPXEN4 VM2
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/36
+ description ASPXEN2 LAN
+ switchport access vlan 2
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/37
+ description ASPXEN2 SAN
+ switchport access vlan 10
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/38
+ description ASPXEN2 VM1
+ switchport access vlan 2
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/39
+ description ASPXEN2 SAN2
+ switchport access vlan 20
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/40
+ description ASPXEN2 VM2
+ switchport access vlan 2
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/41
+ description ASPXEN8 VM2
+ switchport access vlan 2
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/42
+ description OLXEN1 MGMT
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/43
+ description OLXEN2 MGMT
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/44
+ description XENSERVER3 SAN2
+ switchport access vlan 20
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/45
+ description XENSERVER3 VM2
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/46
+ description XENSERVER3 VM1
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/47
+ description BCE FC Liverpool - moved to MPLS - should be AVAILABLE
+ switchport access vlan 808
+!
+interface GigabitEthernet3/0/48
+ description BCE FC New Hartford - moved to MPLS - should be AVAILABLE
+ switchport access vlan 808
+!
+interface GigabitEthernet3/0/49
+ description PH-MGMT 172.29.128.21
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/50
+ description MAPCON2K3
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/51
+ description NSSQL1 - 172.17.100.14
+ switchport access vlan 613
+ spanning-tree portfast
+!
+interface GigabitEthernet3/0/52
+ description GLD MPLS 1841 - 172.20.100.2
+ switchport access vlan 610
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/1
+ description MVintech1
+ switchport access vlan 4
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/2
+ description HTC_SQLSERVER02
+ switchport access vlan 616
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/3
+ description HTCCTX3
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/4
+ description XEN62TEST TRUNK PORT 1
+ switchport access vlan 2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-protocol lacp
+ channel-group 2 mode active
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/5
+ description ASPXEN8 VM1
+ switchport access vlan 2
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/6
+ description Uplink to Rack6-3750-1-2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface GigabitEthernet4/0/7
+ description GameFW Outside Internet Interface
+ switchport access vlan 111
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/8
+ description GameFW Inside trunk
+ switchport access vlan 2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 618
+ switchport mode trunk
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/9
+ description JETEXSi1
+ switchport access vlan 605
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/10
+ description ML360 above array
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/11
+ description ASPESX2 VM1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/12
+ description JetNet Web Server
+ switchport access vlan 605
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/13
+ description JETESXi1 VM Network 1
+ switchport access vlan 605
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/14
+ description JETESXi1 VM Network 2
+ switchport access vlan 605
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/15
+ description RONNY IPMI Raw Internet
+ switchport access vlan 110
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/16
+ description ASPCTX2
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/17
+ description ASPSYSLOG1
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/18
+ description ASPXEN5 MAPNET
+ switchport access vlan 521
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/19
+ description ASPSAN9 SAN
+ switchport access vlan 10
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/20
+ description Uplink from 3750 Mgmt switch
+ switchport access vlan 254
+!
+interface GigabitEthernet4/0/21
+ description Quadsimia Server
+ switchport access vlan 805
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/22
+ description *** MAPCI Primary 5510 FW DC port 2 ***
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 254,519,565,620
+ switchport mode trunk
+ speed 100
+ duplex full
+!
+interface GigabitEthernet4/0/23
+ description ASPXEN3
+ switchport access vlan 2
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/24
+ description ASPSAN8 NIC 2
+ switchport access vlan 10
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/25
+ description JETWEB2_LAN1
+ switchport access vlan 605
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/26
+ description MVINTECH3
+ switchport access vlan 4
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/27
+ description UCS FI Management 1
+ switchport access vlan 254
+ switchport mode access
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/28
+ description ASPSAN9 Mgmt
+ switchport access vlan 254
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/29
+ description XEN62TEST TRUNK PORT 2
+ switchport access vlan 2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-protocol lacp
+ channel-group 2 mode active
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/30
+ description TEMP Uplink to Mgt 3750
+ switchport access vlan 254
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/31
+ description JETSQL2 NIC1
+ switchport access vlan 605
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/32
+ description JETWEB1
+ switchport access vlan 605
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/33
+ description ASP4240-IPS
+ switchport access vlan 3
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/34
+ description ASP4240 Gig0/0 (SPAN)
+ switchport access vlan 2
+ no cdp enable
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/35
+ description ASPXEN9 SAN2
+ switchport access vlan 20
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/36
+ description ASPXEN9 VM2
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/37
+ description ASPXEN9 VM1
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/38
+ description ASPCTX4
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/39
+ description ASPXEN9 SAN
+ switchport access vlan 10
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/40
+ description ASPXEN9 LAN
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/41
+ description ***KO Test Port***
+ switchport access vlan 620
+!
+interface GigabitEthernet4/0/42
+ description JETNET ASA Inside 172.30.5.33
+ switchport access vlan 605
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/43
+ description ** JETNET ASA Outside 192.69.4.155 **
+ switchport access vlan 110
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/44
+ description JETNET IPS
+ switchport access vlan 605
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/45
+ description MVI5510 Management
+ switchport access vlan 254
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/46
+ description ASPWEBHOST1
+ switchport access vlan 2
+ speed 1000
+ duplex full
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/47
+ description Liebert HVAC Unit
+ switchport access vlan 254
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/48
+ description Exinda
+ switchport access vlan 3
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/49
+ description PH-MGMT 172.29.128.21
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/50
+ description MAPCON2K3
+ switchport access vlan 2
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/51
+ description NS Load Balancer WAN
+ switchport access vlan 613
+ spanning-tree portfast
+!
+interface GigabitEthernet4/0/52
+ description GLD MPLS 1841 - 172.20.100.2
+ switchport access vlan 610
+ spanning-tree portfast
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan2
+ description Inside Network
+ ip address 172.29.128.1 255.255.255.0
+!
+interface Vlan3
+ description Internet Vlan
+ ip address 172.30.1.1 255.255.255.0
+!
+interface Vlan4
+ description MVInTech Dedicated
+ ip address 172.30.5.119 255.255.255.240
+!
+interface Vlan5
+ description Conference Room Vlan
+ ip address 172.29.131.1 255.255.255.0
+!
+interface Vlan6
+ no ip address
+!
+interface Vlan7
+ description Guest Internet
+ no ip address
+!
+interface Vlan10
+ ip address 172.29.10.1 255.255.255.0
+!
+interface Vlan20
+ ip address 172.29.20.1 255.255.255.0
+!
+interface Vlan33
+ description HTC DR SAN
+ ip address 172.29.30.1 255.255.255.0
+!
+interface Vlan81
+ no ip address
+!
+interface Vlan100
+ description Security Vlan
+ ip address 172.29.130.1 255.255.255.0
+!
+interface Vlan101
+ description MSSRP Vlan
+ ip address 172.29.132.1 255.255.255.0
+!
+interface Vlan254
+ description Management
+ no ip address
+!
+interface Vlan499
+ no ip address
+!
+interface Vlan500
+ description SyrOffT1
+ ip address 172.29.1.1 255.255.255.252
+!
+interface Vlan501
+ description Voice Server Vlan
+ ip address 172.29.127.1 255.255.255.0
+ shutdown
+!
+interface Vlan502
+ description Engineering
+ ip address 172.29.126.1 255.255.255.0
+!
+interface Vlan503
+ description Office
+ ip address 172.29.125.1 255.255.255.0
+!
+interface Vlan519
+ description Link to Office Network via ASA 5505
+ ip address 172.29.120.65 255.255.255.192
+!
+interface Vlan600
+ description Shared Hosting
+ ip address 172.30.3.1 255.255.255.0
+!
+interface Vlan601
+ description ***MYSTIC STAMP***
+ no ip address
+!
+interface Vlan602
+ description MAPOLCE test (protego)
+ ip address 172.30.4.1 255.255.255.0
+!
+interface Vlan603
+ description Oneida_LTD
+ ip address 172.30.5.1 255.255.255.240
+!
+interface Vlan604
+ ip address 172.30.5.17 255.255.255.240
+!
+interface Vlan605
+ description JetNet
+ no ip address
+!
+interface Vlan606
+ description Agilitas
+ ip address 172.30.5.49 255.255.255.240
+!
+interface Vlan607
+ description Oneida Nation Dedicated
+ ip address 172.30.5.65 255.255.255.240
+!
+interface Vlan608
+ description MDRS
+ ip address 172.30.5.81 255.255.255.240
+!
+interface Vlan609
+ description NYSTEC
+ ip address 172.30.5.97 255.255.255.240
+!
+interface Vlan612
+ description PrivConn
+ ip address 172.30.5.129 255.255.255.240
+!
+interface Vlan613
+ description Northern MPLS
+ ip address 172.17.100.2 255.255.255.0
+!
+interface Vlan616
+ description HTC
+ ip address 10.150.1.1 255.255.255.0
+!
+interface Vlan617
+ description Byrne Dairy
+ ip address 172.19.100.1 255.255.255.0
+!
+interface Vlan700
+ description Citrix Cluster Vlan
+ ip address 172.31.1.1 255.255.255.224
+!
+interface Vlan710
+ description First Choice Vlan
+ ip address 172.31.10.1 255.255.255.248
+!
+interface Vlan800
+ description Upstate Office Equipment
+ ip address 172.31.100.1 255.255.255.240
+!
+interface Vlan801
+ description JH Rhodes
+ ip address 172.31.100.17 255.255.255.240
+!
+interface Vlan802
+ description Woods Valley
+ ip address 172.31.100.33 255.255.255.240
+!
+interface Vlan803
+ description Clifford Fuel
+ ip address 172.31.100.49 255.255.255.240
+!
+interface Vlan805
+ description Quadsimia
+ ip address 172.31.100.65 255.255.255.240
+!
+interface Vlan806
+ description Bernie Bus
+ ip address 192.168.3.1 255.255.255.0
+!
+interface Vlan807
+ description MVINTECH
+ ip address 172.20.100.254 255.255.255.0
+!
+interface Vlan808
+ description First Choice
+ ip address 10.152.254.1 255.255.255.248
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 172.30.1.2
+ip route 10.1.2.45 255.255.255.255 172.29.120.66
+ip route 10.1.2.87 255.255.255.255 172.29.120.66
+ip route 10.29.100.0 255.255.255.0 172.29.120.66
+ip route 10.29.101.0 255.255.255.0 172.29.120.66
+ip route 10.29.128.128 255.255.255.240 172.30.1.2
+ip route 10.29.220.0 255.255.255.0 172.29.120.66
+ip route 10.29.228.0 255.255.255.0 172.29.120.66
+ip route 10.29.229.0 255.255.255.0 172.29.120.66
+ip route 10.29.230.0 255.255.255.0 172.29.120.66
+ip route 10.29.231.0 255.255.255.0 172.29.120.66
+ip route 10.29.232.0 255.255.255.0 172.29.120.66
+ip route 10.29.233.0 255.255.255.0 172.30.1.2
+ip route 10.29.234.0 255.255.255.0 172.29.120.66
+ip route 10.29.236.0 255.255.255.0 172.29.120.66
+ip route 10.29.237.0 255.255.255.0 172.29.120.66
+ip route 10.29.238.0 255.255.255.0 172.29.120.66
+ip route 10.29.239.0 255.255.255.0 172.29.120.66
+ip route 10.29.240.0 255.255.255.0 172.30.1.2
+ip route 10.152.18.0 255.255.255.0 172.30.1.2
+ip route 10.152.19.0 255.255.255.0 172.30.1.2
+ip route 172.29.119.0 255.255.255.0 172.29.120.66
+ip route 172.29.120.0 255.255.255.0 172.29.120.66
+ip route 172.29.120.20 255.255.255.255 172.29.120.66
+ip route 172.29.121.0 255.255.255.0 172.29.120.66
+ip route 172.29.122.0 255.255.255.0 172.29.120.66
+ip route 172.29.123.0 255.255.255.0 172.29.120.66
+ip route 172.29.124.0 255.255.255.0 172.29.120.66
+ip route 172.29.129.0 255.255.255.0 172.29.120.66
+ip route 172.31.4.0 255.255.255.0 172.30.1.2
+ip route 192.168.0.68 255.255.255.255 172.30.1.2
+ip route 192.168.0.70 255.255.255.255 172.30.1.2
+ip route 192.168.0.74 255.255.255.255 172.30.1.2
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip access-list extended LabWall
+ permit tcp 192.168.199.0 0.0.0.255 172.29.126.0 0.0.0.255 eq telnet
+ permit tcp 192.168.199.0 0.0.0.255 172.29.126.0 0.0.0.255 eq 22
+ permit ip 192.168.199.0 0.0.0.255 host 172.29.126.199
+ deny   ip any any log
+ip access-list extended Shibu_Traffic
+ip access-list extended bluecoat
+ permit tcp 172.29.126.0 0.0.0.255 any eq www
+ip access-list extended guest_wireless
+ permit udp any any eq bootps
+ permit udp any any eq bootpc
+ deny   ip 172.29.124.0 0.0.0.255 172.0.0.0 0.255.255.255
+ deny   ip 172.29.124.0 0.0.0.255 192.168.0.0 0.0.255.255
+ deny   ip 172.29.124.0 0.0.0.255 10.0.0.0 0.255.255.255
+ permit tcp 172.29.124.0 0.0.0.255 any eq www
+ permit tcp 172.29.124.0 0.0.0.255 any eq 443
+!
+ip radius source-interface Vlan2 
+ip sla enable reaction-alerts
+logging trap notifications
+logging source-interface Vlan2
+logging 172.29.129.128
+route-map bluecoat permit 10
+ match ip address bluecoat
+ set ip default next-hop 172.30.1.20
+!
+snmp-server group snmp3group v3 priv 
+snmp-server group snmpv3_group v3 priv 
+snmp-server community m@pc1-SNMP RO
+snmp-server community mapc1 RW
+radius-server host 172.29.129.110 auth-port 1812 acct-port 1813 key 7 114E532010053310353219681B6E660838390723585E177C4A67184709204C7D1144056F151C6212
+!
+!
+line con 0
+line vty 0 4
+ length 0
+ transport input ssh
+line vty 5 15
+!
+!
+monitor session 1 destination interface Gi4/0/34
+ntp clock-period 36029332
+ntp server 198.60.22.240
+end
+
+DC-3750G_48#exit

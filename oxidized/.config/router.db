@@ -1,0 +1,13 @@
+#test device SRX650
+72.29.174.50:junos:sfoster:12Sf532!@:12Sf532!@:SRX-650-TESTING
+
+###Production:
+
+#Syracuse ASR1001
+172.29.129.6:ios:sfoster:12sf532!@12sf532!@:12sf532!@12sf532!@:SYR-ASR1001
+
+#DC 3750x_24
+172.29.129.51:ios:sfoster:12sf532!@12sf532!@:12sf532!@12sf532!@:ROME-3750x_24
+
+#DC 3750g
+172.29.128.1:ios:sfoster:12sf532!@12sf532!@:12sf532!@12sf532!@:ROME-3750G

@@ -1,0 +1,448 @@
+MAPDC2-RTR#enable
+MAPDC2-RTR#12sf532!@12sf532!@
+% Unknown command or computer name, or unable to find computer address
+MAPDC2-RTR#terminal length 0
+MAPDC2-RTR#terminal width 0
+MAPDC2-RTR#show version
+Cisco IOS Software, IOS-XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 15.3(1)S1, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Fri 08-Feb-13 10:26 by mcpre
+
+IOS XE Version: 03.08.01.S
+
+Cisco IOS-XE software, Copyright (c) 2005-2013 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+MAPDC2-RTR uptime is 1 year, 49 weeks, 4 days, 2 hours, 46 minutes
+Uptime for this control processor is 1 year, 49 weeks, 4 days, 2 hours, 48 minutes
+System returned to ROM by reload at 08:28:06 UTC Fri Sep 12 2014
+System restarted at 10:18:34 EDT Thu Apr 21 2016
+System image file is "bootflash:asr1001-universalk9.03.08.01.S.153-1.S1.bin"
+Last reload reason: PowerOn
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Level: ipbase
+License Type: Default. No valid license found.
+Next reload license Level: ipbase
+
+cisco ASR1001 (1RU) processor with 3803478K/6147K bytes of memory.
+Processor board ID SSI16480280
+6 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+8388608K bytes of physical memory.
+7741439K bytes of eUSB flash at bootflash:.
+
+Configuration register is 0x2102
+
+MAPDC2-RTR#show vtp status
+show vtp status
+       ^
+% Invalid input detected at '^' marker.
+
+MAPDC2-RTR#show inventory
+NAME: "Chassis", DESCR: "Cisco ASR1001 Chassis w/o IDC"
+PID: ASR1001           , VID: V02, SN: SSI16480280
+
+NAME: "Power Supply Module 0", DESCR: "Cisco ASR1001 AC Power Supply"
+PID: ASR1001-PWR-AC    , VID: V02, SN: MP517010025
+
+NAME: "Power Supply Module 1", DESCR: "Cisco ASR1001 AC Power Supply"
+PID: ASR1001-PWR-AC    , VID: V02, SN: MP51701002K
+
+NAME: "module 0", DESCR: "Cisco ASR1001 SPA Interface Processor"
+PID: ASR1001           , VID:    , SN:            
+
+NAME: "SPA subslot 0/1", DESCR: "2-port Gigabit Ethernet Shared Port Adapter"
+PID: SPA-2X1GE-V2      , VID: V01, SN: SAL1650TXRG
+
+NAME: "SPA subslot 0/0", DESCR: "4-port Gigabit Ethernet Shared Port Adapter"
+PID: ASR1001           , VID:    , SN:            
+
+NAME: "subslot 0/0 transceiver 0", DESCR: "GE T"
+PID: N/A                 , VID: E   , SN: MTC1639069U     
+
+NAME: "subslot 0/0 transceiver 1", DESCR: "GE T"
+PID: N/A                 , VID: E   , SN: MTC163908LE     
+
+NAME: "module R0", DESCR: "Cisco ASR1001 Route Processor"
+PID: ASR1001           , VID: V02, SN: JAE16480CPX
+
+NAME: "module F0", DESCR: "Cisco ASR1001 Embedded Services Processor"
+PID: ASR1001           , VID:    , SN:            
+
+
+MAPDC2-RTR#show running-config
+Building configuration...
+No l4r_shim subsystem is included in this platform.
+
+Current configuration : 8359 bytes
+!
+! Last configuration change at 13:17:30 EDT Wed Mar 28 2018 by dspier
+! NVRAM config last updated at 15:50:10 EST Wed Jan 18 2017 by bmillar
+!
+version 15.3
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+no platform punt-keepalive disable-kernel-core
+!
+hostname MAPDC2-RTR
+!
+boot-start-marker
+boot system flash bootflash:asr1001-universalk9.03.08.01.S.153-1.S1.bin
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+logging console warnings
+enable secret 4 DmvrEyS.cnhD7tUBgy7icy99gAQ7mAszYbzJAszhDco
+!
+aaa new-model
+!
+!
+aaa group server radius radius-auth
+ server name RADIUS
+ ip vrf forwarding Mgmt-intf
+!
+aaa authentication login default group radius-auth local
+aaa authentication login localauth local
+aaa authentication enable default group radius-auth enable
+aaa authorization exec default group radius-auth local if-authenticated 
+!
+!
+!
+!
+!
+aaa session-id common
+clock timezone EST -5 0
+clock summer-time EDT recurring
+no ip source-route
+!
+!
+!
+!
+!
+
+
+no ip bootp server
+no ip domain lookup
+ip domain name phoen1xasp.com
+!
+!
+!
+ipv6 multicast rpf use-bgp
+!
+!
+!
+flow record CYBER_ASR_RECORD
+ match ipv4 protocol
+ match ipv4 source address
+ match ipv4 destination address
+ match transport source-port
+ match transport destination-port
+ match interface input
+ collect routing next-hop address ipv4
+ collect transport tcp flags
+ collect interface output
+ collect counter bytes
+ collect counter packets
+ collect timestamp sys-uptime first
+ collect timestamp sys-uptime last
+ collect application name
+!
+!
+flow exporter CYBER_EXPORTER
+ destination 192.69.4.136
+ source GigabitEthernet0/0/0.110
+ transport udp 9996
+!
+!
+flow monitor CYBER_MONITOR
+ exporter CYBER_EXPORTER
+ cache timeout active 60
+ record CYBER_ASR_RECORD
+!
+multilink bundle-name authenticated
+password encryption aes
+!
+!
+archive
+ path tftp://172.29.129.128/MAPDC2-Rtr
+ write-memory
+ time-period 1440
+!
+!
+!
+!
+!
+!
+username mapolce privilege 15 secret 4 XL.kM3lYjb7Daq3rZMKDlxT.nmasMVxOT/FXhE17Ft6
+!
+redundancy
+ mode none
+!
+!
+!
+ip ftp source-interface GigabitEthernet0
+ip tftp source-interface GigabitEthernet0
+ip ssh logging events
+!
+!
+!
+!
+! 
+! 
+!
+interface GigabitEthernet0/0/0
+ description *** Syracuse Public LAN ***
+ no ip address
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ negotiation auto
+ ntp disable
+!
+interface GigabitEthernet0/0/0.108
+ description *** Rtr to Rtr iBGP VLAN ***
+ encapsulation dot1Q 108
+ ip address 192.168.5.2 255.255.255.0
+!
+interface GigabitEthernet0/0/0.110
+ description *** Rome Backup Pub Int ***
+ encapsulation dot1Q 110
+ ip address 192.69.4.3 255.255.254.0
+ standby 1 ip 192.69.4.1
+ standby 1 priority 90
+!
+interface GigabitEthernet0/0/0.111
+ description *** Syr-Public interface *** 
+ encapsulation dot1Q 111
+ ip address 192.69.6.3 255.255.254.0
+ standby 2 ip 192.69.6.1
+ standby 2 preempt
+!
+interface GigabitEthernet0/0/1
+ description *** Cogent Internet ***
+ ip address 38.88.184.2 255.255.255.252
+ ip access-group 120 in
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip flow monitor CYBER_MONITOR input
+ speed 100
+ no negotiation auto
+ ntp disable
+!
+interface GigabitEthernet0/0/2
+ description *** test description for Steve 3/28/18 ***
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/0/3
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1/1
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0
+ description Management Interface
+ vrf forwarding Mgmt-intf
+ ip address 172.29.129.6 255.255.255.0
+ negotiation auto
+!
+router bgp 26835
+ bgp log-neighbor-changes
+ network 192.69.4.0 mask 255.255.254.0
+ network 192.69.6.0 mask 255.255.254.0
+ redistribute static route-map BLACKHOLE-COGENT
+ neighbor 38.88.184.1 remote-as 174
+ neighbor 38.88.184.1 password 7 082C6C5E59150612302C3C24393833782131
+ neighbor 38.88.184.1 route-map AS-174-OUTGOING out
+ neighbor 66.28.8.1 remote-as 174
+ neighbor 66.28.8.1 password 7 00343315174C5B140B736E42291A0E1F1D0709
+ neighbor 66.28.8.1 ebgp-multihop 255
+ neighbor 66.28.8.1 send-community
+ neighbor 66.28.8.1 route-map BLACKHOLE-OUTGOING out
+ neighbor 192.168.5.1 remote-as 26835
+ neighbor 192.168.5.1 next-hop-self
+!
+ip forward-protocol nd
+!
+ip as-path access-list 10 permit ^174$
+no ip http server
+no ip http secure-server
+ip route 192.69.6.244 255.255.255.255 GigabitEthernet0/0/0.111 tag 255
+ip route vrf Mgmt-intf 0.0.0.0 0.0.0.0 172.29.129.1
+!
+!
+ip prefix-list ANY seq 5 permit 0.0.0.0/0 le 32
+!
+ip prefix-list blackhole-ipv4 seq 10 permit 192.69.6.244/32
+ip prefix-list blackhole-ipv4 seq 20 permit 192.69.4.242/32
+!
+ip prefix-list core-ipv4 seq 10 permit 192.69.4.125/32
+ip prefix-list core-ipv4 seq 15 permit 192.69.4.5/32
+ip prefix-list core-ipv4 seq 20 permit 192.69.4.1/32
+ip prefix-list core-ipv4 seq 25 permit 192.69.4.2/32
+ip prefix-list core-ipv4 seq 30 permit 192.69.6.1/32
+ip prefix-list core-ipv4 seq 35 permit 192.69.6.2/32
+!
+ip prefix-list only32 seq 10 permit 0.0.0.0/0 ge 32
+!
+ip prefix-list only_ours seq 10 permit 192.69.4.0/22 ge 32
+logging facility syslog
+logging host 172.29.129.128 vrf Mgmt-intf
+logging host 172.29.128.21 vrf Mgmt-intf
+access-list 1 permit 192.77.184.198
+access-list 1 permit 192.69.4.125
+access-list 1 permit 172.29.0.0 0.0.255.255
+access-list 1 deny   any
+access-list 10 permit 192.69.4.0 0.0.1.255
+access-list 20 permit 192.69.6.0 0.0.1.255
+access-list 99 permit 192.69.6.244
+access-list 102 permit ip 192.69.4.0 0.0.3.255 any
+access-list 102 permit icmp any any echo
+access-list 102 permit icmp any any parameter-problem
+access-list 102 permit icmp any any packet-too-big
+access-list 102 permit icmp any any source-quench
+access-list 102 permit udp any any range 33400 34400 log
+access-list 102 deny   icmp any any log
+access-list 102 deny   ip any any log
+access-list 120 permit ip any 192.69.4.0 0.0.3.255
+access-list 120 permit icmp any 192.69.4.0 0.0.3.255
+access-list 120 permit ip any 38.88.184.0 0.0.0.3
+access-list 120 permit icmp any 38.88.184.0 0.0.0.3
+access-list 120 deny   ip 127.0.0.0 0.255.255.255 any log
+access-list 120 deny   ip 10.0.0.0 0.255.255.255 any log
+access-list 120 deny   ip 0.0.0.0 0.255.255.255 any log
+access-list 120 deny   ip 172.16.0.0 0.0.255.255 any log
+access-list 120 deny   ip 192.168.0.0 0.0.255.255 any log
+access-list 120 deny   ip 192.0.2.0 0.0.0.255 any log
+access-list 120 deny   ip 169.254.0.0 0.0.255.255 any log
+access-list 120 deny   ip 224.0.0.0 15.255.255.255 any log
+access-list 120 deny   ip host 255.255.255.255 any log
+access-list 120 deny   ip any any log
+access-list 120 deny   icmp any any echo log
+access-list 120 deny   icmp any any redirect log
+access-list 120 deny   icmp any any mask-request log
+access-list 120 deny   udp any any range 33400 34400 log
+!
+route-map AS-174-INCOMING permit 10
+ match as-path 10
+!
+route-map AS-174-OUTGOING permit 10
+ match ip address 10
+ set as-path prepend 26835
+!
+route-map AS-174-OUTGOING permit 20
+ match ip address 20
+!
+route-map BLACKHOLE-OUTGOING permit 10
+ match ip address prefix-list only_ours
+!
+route-map BLACKHOLE-OUTGOING deny 50
+ match ip address prefix-list ANY
+!
+route-map INCOMING-LOCALPREF permit 10
+ set weight 20
+!
+route-map BLACKHOLE-COGENT deny 10
+ description Don't blackhole our core IP's
+ match ip address prefix-list core-ipv4
+!
+route-map BLACKHOLE-COGENT permit 20
+ match ip address prefix-list only32
+ match tag 255
+ set origin igp
+ set community 11403930
+!
+snmp-server group snmpv3_group v3 priv 
+snmp-server community mapc1 RO 1
+snmp-server contact Brian
+!
+!
+radius server RADIUS
+ address ipv4 172.29.129.110 auth-port 1812 acct-port 1813
+ key 7 041C4123083674523801375B21565F2E011535086A3D6C371E251545476F4D7612195422574E6143
+!
+!
+control-plane
+!
+banner login ^C
+
+Property of M.A. Polce
+
+Unauthorized use prohibited.
+
+^C
+!
+line con 0
+ exec-timeout 5 0
+ transport output ssh
+ stopbits 1
+line aux 0
+ exec-timeout 0 1
+ no exec
+ stopbits 1
+line vty 0 4
+ access-class 1 in vrf-also
+ transport input ssh
+ transport output ssh
+line vty 5 15
+ access-class 1 in vrf-also
+ transport input ssh
+ transport output ssh
+!
+ntp source GigabitEthernet0
+ntp server vrf Mgmt-intf 172.29.121.44
+!
+end
+
+MAPDC2-RTR#exit

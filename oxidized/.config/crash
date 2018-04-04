@@ -1,0 +1,21 @@
+--------------------------------------------------
+2018-03-30 20:46:11 UTC
+No such file or directory @ rb_sysopen - /root/.config/router.db [Errno::ENOENT]
+--------------------------------------------------
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/source/csv.rb:28:in `initialize'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/source/csv.rb:28:in `open'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/source/csv.rb:28:in `load'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/nodes.rb:15:in `block in load'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/nodes.rb:128:in `synchronize'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/nodes.rb:128:in `with_lock'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/nodes.rb:10:in `load'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/nodes.rb:123:in `initialize'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/core.rb:14:in `new'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/core.rb:14:in `initialize'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/core.rb:4:in `new'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/core.rb:4:in `new'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/lib/oxidized/cli.rb:12:in `run'
+/var/lib/gems/2.3.0/gems/oxidized-0.21.0/bin/oxidized:9:in `<top (required)>'
+/usr/local/bin/oxidized:23:in `load'
+/usr/local/bin/oxidized:23:in `<main>'
+--------------------------------------------------

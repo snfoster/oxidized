@@ -1,0 +1,59 @@
+---
+username: sfoster
+password: 12Sf532!@
+model: cisco
+log: "/root/.config/oxidized/log/oxidized.log"
+interval: 300
+use_syslog: true
+debug: false
+threads: 30
+timeout: 20
+retries: 3
+prompt: !ruby/regexp /^([\w.@-]+[#&gt;]\s?)$/
+rest: 0.0.0.0:8888
+next_adds_job: false
+vars: {}
+groups: {}
+models: {}
+pid: /root/.config/oxidized/pid
+input:
+  default: ssh, telnet
+  debug: true
+  ssh:
+    secure: false
+output:
+  default: git
+  file:
+    directory: /root/.config/oxidized/configs
+  git:
+    user: sfoster
+    email: sfoster@mapolce.com
+    repo: "/root/oxidized.git"
+source:
+  default: csv
+  csv:
+    file: /root/.config/oxidized/router.db
+    delimiter: !ruby/regexp /:/
+    map:
+      ip: 0
+      model: 1
+      username: 2
+      password: 3
+      name: 5
+    vars_map:
+      enable: 4
+    gpg: false
+model_map:
+  cisco: ios
+  juniper: junos
+hooks:
+  email_output:
+    type: exec
+    events: [post_store, node_fail]
+    cmd: '/root/.config/oxidized/extra/oxidized-report-git-commits | mail -s "Oxidized updates for ${OX_NODE_NAME}" sfoster@mapolce.com'
+    async: true
+    timeout: 120
+
+
+
+
