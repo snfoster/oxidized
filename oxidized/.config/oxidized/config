@@ -1,6 +1,6 @@
 ---
-username: sfoster
-password: 12Sf532!@
+username: username
+password: password
 model: cisco
 log: "/root/.config/oxidized/log/oxidized.log"
 interval: 300
