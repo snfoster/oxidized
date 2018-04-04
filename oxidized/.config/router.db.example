@@ -1,0 +1,13 @@
+#test device - juniper name
+72.29.174.50:junos:username:password:enable-pass:SRX-650-TESTING
+
+###Production:
+
+#cisco name
+172.29.129.6:ios:username:password:enable-pass:SYR-ASR1001
+
+#cisco name
+172.29.129.51:ios:username:password:enable-pass:ROME-3750x_24
+
+#cisco name
+172.29.128.1:ios:username:password:enable-pass:ROME-3750G
